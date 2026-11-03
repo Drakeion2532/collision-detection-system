@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+data/
+models/*.keras
+results/incidents.db
+results/snapshots/
+.pytest_cache/

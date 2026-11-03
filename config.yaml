@@ -1,0 +1,41 @@
+# Settings used in the paper (Patil, Punde, Sahani, Salve, IJCACI 2025).
+
+data:
+  merged_dir: data/Merged_Accident_Dataset   # output of `python -m tcd.data merge`
+  sources:                                   # the three public Kaggle datasets
+    - data/raw/accident-detection-from-cctv-footage
+    - data/raw/cctv-accident-data-korea
+    - data/raw/road-accidents-from-cctv-footages
+  split: {train: 0.795, val: 0.1025, test: 0.1025}   # 27,368 / 7,054 / 7,054 in the paper
+  seed: 42
+
+training:
+  batch_size: 32
+  phase1_epochs: 60        # base frozen, head only
+  phase2_epochs: 40        # top of the base unfrozen
+  lr_phase1: 1.0e-4
+  lr_phase2: 1.0e-5
+  early_stopping_patience: 10
+  augmentation:
+    rotation_deg: 20
+    shift: 0.2
+    shear: 0.2
+    zoom: 0.2
+    brightness: [0.8, 1.2]
+    horizontal_flip: true
+
+models:
+  vgg19:            {input: 224, l2: 1.0e-5, unfreeze_last: 4}
+  inceptionv3:      {input: 299, l2: 1.0e-5, unfreeze_last: 30}
+  mobilenetv3large: {input: 224, l2: 1.0e-4, unfreeze_last: 30}
+  custom_cnn:       {input: 224, l2: 1.0e-4}
+
+detection:
+  threshold: 0.7           # accident probability that raises an alert
+  sample_every_n_frames: 5
+  confirm_frames: 3        # consecutive positive samples before alerting
+  cooldown_seconds: 60     # one alert per incident, not per frame
+
+alerts:
+  dry_run: true            # set false and fill .env to send real email / SMS
+  location: {lat: 18.4636, lon: 73.8682, label: "VIT Pune junction (demo)"}
