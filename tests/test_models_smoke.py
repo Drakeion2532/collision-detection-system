@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """Builds every architecture and runs a two-phase training step on tiny synthetic data.
 
 Uses random initial weights so the test runs offline; real training uses ImageNet weights.

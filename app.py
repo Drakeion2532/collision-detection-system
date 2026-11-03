@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """Streamlit operator console: upload a video, tune the detector, review incidents.
 
     streamlit run app.py

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use or adapt this work, please credit it as below and keep the copyright notice."
+title: "Transfer Learning-Based Real-Time Traffic Collision Detection and Automated Reporting System"
+type: software
+authors:
+  - family-names: Punde
+    given-names: Shubhan
+    email: shubhanpunde@gmail.com
+repository-code: "https://github.com/Drakeion2532/collision-detection-system"
+license: MIT
+date-released: "2026-11-03"
+identifiers:
+  - type: other
+    value: "sp2532-2be7050d798f"
+    description: "Project identifier"
+references:
+  - type: conference-paper
+    title: "Transfer Learning-Based Real-Time Traffic Collision Detection and Automated Reporting System"
+    authors:
+      - name: "Saraswati Patil"
+      - name: "Shubhan Punde"
+      - name: "Prince Sahani"
+      - name: "Abhinav Salve"
+    doi: "10.1007/978-3-032-35173-9_2"
+    year: 2025

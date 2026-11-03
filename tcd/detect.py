@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """Real-time detection on a video or CCTV stream (Section 3).
 
 Frames are sampled every N frames, scored by the model, and an incident is raised when

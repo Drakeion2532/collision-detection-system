@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """End-to-end smoke test on synthetic images (no download, no GPU, ~1 minute).
 
 Checks that data loading, two-phase training, evaluation, video detection, alerts and
@@ -45,7 +46,7 @@ def main():
                 d.mkdir(parents=True)
                 for i in range(n):
                     cv2.imwrite(str(d / f"{i}.png"), frame(acc, rng))
-        model, hist = train_one("custom_cnn", cfg, data_dir=tmp / "data", epochs=(12, 4))
+        model, hist = train_one("custom_cnn", cfg, data_dir=tmp / "data", epochs=(12, 4), out_dir=tmp)
         print("trained epochs:", len(hist["loss"]), "train acc:", [round(a, 2) for a in hist["accuracy"]], "val acc:", [round(a, 2) for a in hist["val_accuracy"]])
 
         video = tmp / "clip.mp4"

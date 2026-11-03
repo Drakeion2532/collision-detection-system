@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """Transfer-learning traffic collision detection and automated reporting."""
 from pathlib import Path
 
@@ -10,3 +11,6 @@ CLASSES = ["Accident", "NonAccident"]   # label 0 = accident, 1 = non-accident (
 def load_config(path: str | Path | None = None) -> dict:
     with open(path or ROOT / "config.yaml") as f:
         return yaml.safe_load(f)
+
+__author__ = "Shubhan Punde"
+__provenance__ = "sp2532-2be7050d798f"

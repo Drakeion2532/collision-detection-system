@@ -1,12 +1,12 @@
 # Traffic Collision Detection & Automated Reporting (Transfer Learning)
 
-[![tests](https://github.com/Drakeion2532/traffic-collision-detection/actions/workflows/tests.yml/badge.svg)](https://github.com/Drakeion2532/traffic-collision-detection/actions/workflows/tests.yml)
+[![tests](https://github.com/Drakeion2532/collision-detection-system/actions/workflows/tests.yml/badge.svg)](https://github.com/Drakeion2532/collision-detection-system/actions/workflows/tests.yml)
 
 A system that watches CCTV footage, recognises traffic collisions frame by frame, and alerts emergency responders by **email, SMS and a Google Maps link** within seconds. Four deep-learning models are compared on one merged, cleaned dataset of **41,476 CCTV images**. VGG19 and InceptionV3 reach **97% accuracy** and an accident-class F1 of **0.96**.
 
 This repository is the code companion to the paper:
 
-> S. Patil, **S. Punde**, P. Sahani, A. Salve. *Transfer Learning–Based Real-Time Traffic Collision Detection and Automated Reporting System.* IJCACI 2025 (Springer). Vishwakarma Institute of Technology, Pune.
+> S. Patil, **S. Punde**, P. Sahani, A. Salve. *Transfer Learning–Based Real-Time Traffic Collision Detection and Automated Reporting System.* IJCACI 2025, Springer. DOI: [10.1007/978-3-032-35173-9_2](https://doi.org/10.1007/978-3-032-35173-9_2). Vishwakarma Institute of Technology, Pune.
 
 ![Architecture](docs/figures/architecture.png)
 
@@ -79,7 +79,7 @@ Test set of 7,054 images (2,235 accident, 4,819 non-accident):
 
 ```bash
 pip install -r requirements.txt
-pytest -q                                   # 14 tests: data, detector logic, alerts, DB, all 4 models
+pytest -q                                   # 15 tests: data, detector logic, alerts, DB, all 4 models, authorship
 python scripts/smoke_test.py                # end-to-end on synthetic data, ~1 minute on CPU
 
 # with the Kaggle data in data/raw/
@@ -118,3 +118,9 @@ tests/           pytest suite
 ## Authors
 
 Saraswati Patil, Shubhan Punde, Prince Sahani, Abhinav Salve, Vishwakarma Institute of Technology, Pune.
+
+## Licence and credit
+
+MIT © 2026 [Shubhan Punde](https://github.com/Drakeion2532). You're welcome to learn from and reuse this code; the licence requires keeping the copyright notice, and presenting the project as your own work is not permitted. To cite it, use [CITATION.cff](CITATION.cff).
+
+<sub>Project ID: sp2532-2be7050d798f</sub>

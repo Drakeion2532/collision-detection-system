@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """Two-phase transfer learning (Section 4.3).
 
 Phase 1 (epochs 1-60):  backbone frozen, train the new head at lr 1e-4.
@@ -41,7 +42,7 @@ def datasets(cfg, input_size: int, data_dir=None):
     return train, val
 
 
-def train_one(name: str, cfg: dict, data_dir=None, weights="imagenet", epochs=None):
+def train_one(name: str, cfg: dict, data_dir=None, weights="imagenet", epochs=None, out_dir=None):
     import tensorflow as tf
     mc, tc = cfg["models"][name], cfg["training"]
     p1, p2 = epochs or (tc["phase1_epochs"], tc["phase2_epochs"])
@@ -66,10 +67,11 @@ def train_one(name: str, cfg: dict, data_dir=None, weights="imagenet", epochs=No
         hist[k] = hist.get(k, []) + list(map(float, v))
     hist["phase2_start"] = len(h1.history["loss"])
 
-    (ROOT / "models").mkdir(exist_ok=True)
-    (ROOT / "results").mkdir(exist_ok=True)
-    model.save(ROOT / "models" / f"{name}.keras")
-    (ROOT / "results" / f"{name}_history.json").write_text(json.dumps(hist))
+    out = out_dir or ROOT
+    (out / "models").mkdir(parents=True, exist_ok=True)
+    (out / "results").mkdir(parents=True, exist_ok=True)
+    model.save(out / "models" / f"{name}.keras")
+    (out / "results" / f"{name}_history.json").write_text(json.dumps(hist))
     return model, hist
 
 

@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Shubhan Punde · https://github.com/Drakeion2532/collision-detection-system · MIT licence · sp2532-2be7050d798f
 """The four architectures compared in the paper.
 
 Pretrained backbones (VGG19, InceptionV3, MobileNetV3Large) get a new head:
